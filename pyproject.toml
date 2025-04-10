@@ -1,0 +1,41 @@
+[project]
+name = "file-utils"
+version = "0.0.1"
+description = "文件操作常用工具"
+authors = [
+    { name = "kuku119", email = "2846257141@qq.com" },
+    { name = "ukk119", email = "jdtcty2002@163.com" },
+]
+readme = "README.md"
+requires-python = "^3.13"
+dependencies = [
+    "aiofiles (>=24.1.0,<25.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "pillow (>=11.1.0,<12.0.0)",
+]
+
+[tool.poetry]
+packages = [{ include = "file_utils" }]
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.5"
+pytest-asyncio = "^0.26.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+
+[tool.black]
+skip-string-normalization = true
+line-length = 110

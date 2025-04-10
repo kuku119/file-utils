@@ -1,0 +1,16 @@
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv
+poetry.lock
+.pytest_cache/
+
+# build
+dist
+build
+
+# vscode
+.vscode
+*.code-workspace
+.editorconfig
