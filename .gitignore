@@ -2,18 +2,21 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.venv
-poetry.lock
+/.venv
+/poetry.lock
+
+# pytest
 .pytest_cache/
+/pytest_temp/
 
 # build
-dist
-build
+/dist
+/build
 
 # vscode
 .vscode
-*.code-workspace
-.editorconfig
+/*.code-workspace
+/.editorconfig
 
 # other
-/[Tt][Ee][Mm][Pp]*
+[Tt][Ee][Mm][Pp]*
