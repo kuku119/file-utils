@@ -5,10 +5,6 @@ __pycache__/
 /.venv
 /poetry.lock
 
-# pytest
-.pytest_cache/
-/pytest_temp/
-
 # build
 /dist
 /build
