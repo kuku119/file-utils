@@ -1,20 +1,18 @@
 from ._base import (
     exist_file,
     read_file,
-    read_file_async,
-    read_file_sync,
     write_file,
-    write_file_async,
-    write_file_sync,
+)
+from ._json import (
+    read_json,
+    write_json,
 )
 
 
 __all__ = [
     'exist_file',
     'read_file',
-    'read_file_async',
-    'read_file_sync',
     'write_file',
-    'write_file_async',
-    'write_file_sync',
+    'read_json',
+    'write_json',
 ]
