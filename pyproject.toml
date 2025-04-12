@@ -17,11 +17,6 @@ dependencies = [
 [tool.poetry]
 packages = [{ include = "file_utils" }]
 
-[tool.poetry.group.test.dependencies]
-pytest = "^8.3.5"
-pytest-asyncio = "^0.26.0"
-
-
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
 
