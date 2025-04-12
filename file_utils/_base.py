@@ -18,11 +18,7 @@ if TYPE_CHECKING:
 __all__ = [
     'exist_file',
     'read_file',
-    'read_file_async',
-    'read_file_sync',
     'write_file',
-    'write_file_async',
-    'write_file_sync',
 ]
 
 
@@ -69,7 +65,7 @@ def read_file(f: PathOrStr, mode: Literal['bytes'], async_mode: Literal[False], 
 @overload
 def read_file(
     f: PathOrStr, mode: Literal['str'], async_mode: Literal[False], /, encoding: str = 'utf-8'
-) -> bytes: ...
+) -> str: ...
 def read_file(
     f: PathOrStr, mode: Literal['bytes', 'str'], async_mode: bool, /, encoding: Optional[str] = None
 ) -> BytesOrStr | AwaitableBytesOrStr:
