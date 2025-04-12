@@ -1,9 +1,8 @@
 from pathlib import Path
-import random
 
 import pytest
 
-from .util import generate_random_text, TEMP_DIR
+from .util import generate_random_text, generate_random_bytes, TEMP_DIR
 
 
 @pytest.fixture(scope='function')
@@ -32,7 +31,7 @@ def temp_bytes_file() -> tuple[Path, bytes]:
     else:
         file.touch()
 
-    b = random.randbytes(random.randint(1, 1000))
+    b = generate_random_bytes()
     file.write_bytes(b)
 
     return file, b
