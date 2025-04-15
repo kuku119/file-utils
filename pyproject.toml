@@ -1,6 +1,6 @@
 [project]
 name = "file-utils"
-version = "0.0.1"
+version = "0.0.2"
 description = "文件操作常用工具"
 authors = [
     { name = "kuku119", email = "2846257141@qq.com" },
