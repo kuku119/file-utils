@@ -26,7 +26,15 @@ sync_open = open
 
 
 def exist_file(f: PathOrStr, /) -> bool:
-    """`f` 是否存在"""
+    """
+    文件是否存在
+
+    :param f: 目标文件
+    :type f: str | Path
+
+    :return: 文件是否存在
+    :rtype: bool
+    """
     return Path(f).exists() if isinstance(f, str) else f.exists()
 
 
@@ -34,14 +42,7 @@ def exist_file(f: PathOrStr, /) -> bool:
 
 
 def check_before_read(f: PathOrStr, /) -> Path:
-    """
-    读取前的检查
-
-    ---
-
-    1. 将 `f` 转为 `Path` 类型
-    2. 检查 `f` 是否存在且 `f` 为文件
-    """
+    """将 `f` 转为 `Path` 类型，判断 `f` 是否存在。"""
     if isinstance(f, str):
         f = Path(f)
 
@@ -69,7 +70,21 @@ def read_file(
 def read_file(
     f: PathOrStr, mode: Literal['bytes', 'str'], async_mode: bool, /, encoding: Optional[str] = None
 ) -> BytesOrStr | AwaitableBytesOrStr:
-    """读取文件"""
+    """
+    读取文件
+
+    :param f: 目标文件
+    :type f: str | Path
+    :param mode: 读取字节还是字符
+    :type mode: Literal['bytes', 'str']
+    :param async_mode: 是否启用异步
+    :type async_mode: bool
+    :param encoding: 文件编码，仅在读取字符时可用
+    :type encoding: str | None
+
+    :return: 文件内容
+    :rtype: bytes | str | Awaitable[bytes] | Awaitable[str]
+    """
     if async_mode:
         return read_file_async(f, mode, encoding=encoding)
     else:
@@ -118,15 +133,7 @@ def read_file_sync(
 
 
 def check_before_write(f: PathOrStr, /) -> Path:
-    """
-    写入前的检查
-
-    ---
-
-    1. 将 `f` 转为 `Path` 类型
-    2. 检查 `f` 是否为文件夹
-    3. 为 `f` 创建各上层文件夹
-    """
+    """将 `f` 转为 `Path` 类型，检查 `f` 是否为文件夹，为 `f` 创建各上层文件夹。"""
     if isinstance(f, str):
         f = Path(f)
 
@@ -155,7 +162,23 @@ def write_file(
 def write_file(
     f: PathOrStr, data: BytesOrStr, async_mode: bool, /, replace: bool = True, encoding: str = 'utf-8'
 ) -> Path | Awaitable[Path]:
-    """写入文件"""
+    """
+    写入文件
+
+    :param f: 目标路径
+    :type f: str | Path
+    :param data: 待写入数据
+    :type data: bytes | str
+    :param async_mode: 是否启用异步
+    :type async_mode: bool
+    :param replace: 是否启用覆盖
+    :type replace: bool
+    :param encoding: 文件编码
+    :type encoding: str
+
+    :return: 写入路径
+    :rtype: Path | Awaitable[Path]
+    """
     if async_mode:
         return write_file_async(f, data, replace=replace, encoding=encoding)
     else:
