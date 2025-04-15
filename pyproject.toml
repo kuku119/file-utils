@@ -7,7 +7,7 @@ authors = [
     { name = "ukk119", email = "jdtcty2002@163.com" },
 ]
 readme = "README.md"
-requires-python = "^3.13"
+requires-python = ">=3.13,<4.0"
 dependencies = [
     "aiofiles (>=24.1.0,<25.0.0)",
 ]
